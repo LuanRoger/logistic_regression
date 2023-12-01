@@ -47,32 +47,9 @@ class LogisticRegression:
     
         return self.__sigmoid(np.dot(X, self.theta))
     
-    def predict(self, X, threshold):
+    def predict(self, X, threshold: float = 0.5) -> tuple[float, bool]:
         if(not isinstance(X, np.ndarray)):
             X = np.array(X)
         probability = self.predict_prob(X)
         prediction = probability >= threshold
         return (probability, prediction)
-    
-    def accuracy(self, X, y):
-        if(not isinstance(X, np.ndarray)):
-            X = np.array(X)
-        if(not isinstance(y, np.ndarray)):
-            y = np.array(y)
-        (_, predictions) = self.predict(X, 0.5)
-        accuracy = (predictions == y).mean()
-        return accuracy
-    
-    def precision(self, X, y):
-        if not isinstance(X, (list, np.ndarray)):
-            X = np.array(X)
-        if not isinstance(y, (list, np.ndarray)):
-            y = np.array(y)
-
-        X = np.array(X)
-        y = np.array(y)
-        (_, predictions) = self.predict(X, 0.5)
-        TP = np.sum((predictions == 1) & (y == 1))
-        FP = np.sum((predictions == 1) & (y == 0))
-        precision = TP / (TP + FP)
-        return precision
