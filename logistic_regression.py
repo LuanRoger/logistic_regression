@@ -6,16 +6,17 @@ class LogisticRegression:
     num_iterations: int
 
     def __init__(self, learning_rate: float = 0.01, num_iter: int = 100000, 
-                 fit_intercept: bool = False):
+                 fit_intercept: bool = False, verbose: bool = False):
         self.lr = learning_rate
         self.num_iter = num_iter
         self.fit_intercept = fit_intercept
+        self.verbose = verbose
     
-    def _add_intercept(self, X: np.ndarray):
+    def _add_intercept(self, X):
         intercept = np.ones((X.shape[0], 1))
         return np.concatenate((intercept, X), axis=1)
     
-    def _sigmoid(self, z: np.ndarray):
+    def _sigmoid(self, z):
         return 1 / (1 + np.exp(-z))
     
     def _loss(self, h, y):
