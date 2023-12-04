@@ -54,14 +54,17 @@ setosa_accuracy, setosa_precision, setosa_recall = calculate_metrics(predictions
 versicolor_accuracy, versicolor_precision, versicolor_recall = calculate_metrics(predictions_versicolor, versicolor_y_test)
 virginica_accuracy, virginica_precision, virginica_recall = calculate_metrics(predictions_virginica, virginica_y_test)
 
+print("Setosa metrics:")
 print(f"Setosa accuracy: {setosa_accuracy*100:.2f}%")
 print(f"Setosa precision: {setosa_precision*100:.2f}%")
 print(f"Setosa recall: {setosa_recall*100:.2f}%")
 
+print("Versicolor metrics:")
 print(f"Versicolor accuracy: {versicolor_accuracy*100:.2f}%")
 print(f"Versicolor precision: {versicolor_precision*100:.2f}%")
 print(f"Versicolor recall: {versicolor_recall*100:.2f}%")
 
+print("Virginica metrics:")
 print(f"Virginica accuracy: {virginica_accuracy*100:.2f}%")
 print(f"Virginica precision: {virginica_precision*100:.2f}%")
 print(f"Virginica recall: {virginica_recall*100:.2f}%")
