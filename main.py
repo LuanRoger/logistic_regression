@@ -19,9 +19,9 @@ versicolor_y_train = convert_into_bynary_output(Y_train, IrisClasification.VERSI
 virginica_clasification = LogisticRegression()
 virginica_y_train = convert_into_bynary_output(Y_train, IrisClasification.VIRGINICA)
 
-setosa_clasification.fit(X_train, setosa_y_train)
-versicolor_clasification.fit(X_train, versicolor_y_train)
-virginica_clasification.fit(X_train, virginica_y_train)
+setosa_clasification.train(X_train, setosa_y_train)
+versicolor_clasification.train(X_train, versicolor_y_train)
+virginica_clasification.train(X_train, virginica_y_train)
 
 predictions_setosa: list[bool] = []
 predictions_virginica: list[bool] = []
